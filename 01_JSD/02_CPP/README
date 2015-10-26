@@ -1,0 +1,16 @@
+##########
+How to run
+##########
+
+# Run Jellyfish for genome 1
+$ jellyfish count -m 31 -s 5M -t 4 g1.fna -o g1.jf
+$ jellyfish dump g1.jf > g1.jf.fa
+$ convert.sh g1.jf.fa > g1.jf.fa.tab
+
+# Run Jellyfish for genome 2
+$ jellyfish count -m 31 -s 5M -t 4 g2.fna -o g2.jf
+$ jellyfish dump g2.jf > g2.jf.fa
+$ convert.sh g2.jf.fa > g2.jf.fa.tab
+
+# Run JSD
+$ JSD -f g1.jf.fa.tab -s g2.jf.fa.tab -o g1_g2.txt
